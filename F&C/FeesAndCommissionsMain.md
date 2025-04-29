@@ -1,8 +1,8 @@
 # Fees and Commissio Context
-*** Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module *** 
+***Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module*** 
 
-## Component Name
-**FeesAndCommissionsMain** — Fees and Commissions main tabs that is directly loaded when we first visit the Fees and commissions module
+### Component Name
+**FeesAndCommissionsMain.tsx** — Fees and Commissions main tabs that is directly loaded when we first visit the Fees and commissions module
 
 ## 1. Introduction: Purpose of the Context
 The purpose of the FeesAndCommissionsMain component is to render a tab-based interface for managing and displaying the fees and commissions data. This interface includes multiple tabs such as "Service Fee," "Bank Transaction Fee," and others. Each tab loads a corresponding component for handling the data and logic associated with that particular fee type.
@@ -98,8 +98,6 @@ export default FeesAndCommissionsMain
 
 **Tabs**
 - Dynamic Tabs: Object.values(FEES_COMMISSIONS_TABS) is used to dynamically generate the tabs from the predefined FEES_COMMISSIONS_TABS configuration. The Tab component is rendered for each tab type, and each tab’s value and label are mapped from this configuration.
-**Lazy Loading with Suspense**
-- Suspense: React’s Suspense component is used here to enable lazy loading for the content of each tab. A fallback component (in this case, CircularProgress) is shown until the tab content has finished loading.
 
 ```typescript
 <Suspense fallback={<CircularProgress />}>
@@ -111,17 +109,20 @@ export default FeesAndCommissionsMain
 </Suspense>
 ```
 
+**Lazy Loading with Suspense**
+- Suspense: React’s Suspense component is used here to enable lazy loading for the content of each tab. A fallback component (in this case, CircularProgress) is shown until the tab content has finished loading.
 - Lazy Loading Components: For each tab, a component is dynamically loaded using the Object.entries(FEES_AND_COMMISSOINS_MAIN_TABS_COMPONENTS) method, which maps the components based on the selected tab. The content of the tab is only loaded when the tab is selected. This approach minimizes the initial load time of the page and ensures that only the active tab’s content is rendered.
 
 **Conditional Rendering of Tab Content**
 - TabPanel: A TabPanel component wraps the content of each tab. Only the content of the active tab (determined by tabValue) is rendered. The TabPanel ensures that only the component corresponding to the active tab is displayed.
+- Optimized Rendering: {key === tabValue && <Component />} ensures that the component for the currently active tab is rendered, preventing unnecessary rendering of inactive tabs.
 
 ```typescript
 <TabPanel key={key} value={key}>
   {key === tabValue && <Component />}
 </TabPanel>
 ```
-Optimized Rendering: {key === tabValue && <Component />} ensures that the component for the currently active tab is rendered, preventing unnecessary rendering of inactive tabs.
+
 
 ## 5. FEES_AND_COMMISSOINS_MAIN_TABS_COMPONENTS Record
 This record maps each tab (defined by FEES_AND_COMMISSIOS_MAIN_TABS) to its corresponding component, which handles the specific logic and UI for that tab.

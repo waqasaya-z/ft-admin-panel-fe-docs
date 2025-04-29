@@ -1,12 +1,12 @@
-# Fees and Commissio Context
-*** Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module *** 
+# Fees and Commission Context
+***Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module*** 
 
-## Component Name
-**FeesAndCommissionsContext** — Context used in Fees and commission for managing module state primarily the website id.
+### Component Name
+**FeesAndCommissionsContext.tsx** — Context used in Fees and commission for managing module state primarily the website id.
 
 
 ### 1. Introduction: Purpose of the Context
-This context is used for managing the fees and commissions data within your application. It serves as a centralized store that provides the necessary data and methods to access or modify details such as sites, countries, and site-specific information (siteDetails).
+This context is used for managing the fees and commissions data within your application. It serves as a centralized store that provides the necessary data and methods to access data such as sites or countries. It contains various fields notably the siteDetails which contains the selected website ID of the main dropdown.
 
 ### 2. Context Interface: Defining the Structure
 The context is defined by the interface IFeesAndCommissionsContext, which ensures that all necessary values are passed through the context provider. This interface also defines the structure for the context's state.

@@ -1,8 +1,8 @@
 # Settings Form Modal
-*** Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module *** 
+***Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module*** 
 
 ### Component Name
-**SettingsFormModal** — A dynamic form modal component for adding or editing fees and commissions settings.
+**SettingsFormModal.tsx** — A dynamic form modal component for adding or editing fees and commissions settings.
 
 ### Overall Description
 `SettingsFormModal` is a flexible modal form used in the Fees and Commissions module ("Main" and "Settings" tabs).  
@@ -12,8 +12,6 @@ It supports both **add** and **edit** functionalities and manages `website_id` a
 ---
 
 ### 1. Chunk: Import Statements
-```tsx
-
 ## Import Statements and Their Explanations
 
 ### React Imports
@@ -32,7 +30,7 @@ It supports both **add** and **edit** functionalities and manages `website_id` a
 - **`FEES_COMMISSIONS_ALL_TYPES`** - TypeScript type definition for various fee and commission types, used to ensure proper type-checking when handling data.
 - **`validationSchemaMapping`** - A mapping utility that associates each fee/commission type with a corresponding validation schema, ensuring proper validation is applied for each type.
 - **`ResponsiveDialog`** - A custom component that renders a responsive dialog (modal), typically used for adding or updating fees and commissions in a consistent layout.
-```
+
 
 ### Chunk 2: Component State Setup
 

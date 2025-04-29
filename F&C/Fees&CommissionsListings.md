@@ -1,4 +1,9 @@
-# ServiceFee Component Documentation
+# Listing Component Documentation (Service Fee)
+***Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module*** 
+
+### Component Name
+**ServiceFee.tsx** — The main listing tab that opens up when you first visit the `Fees and Commissions` module.
+
 
 ## 1. Introduction to Component
 This is a **basic listing component** used in the **Fees and Commissions** module. It follows a standard listing structure that is reused across multiple listing tabs in the application, ensuring consistency in UI and behavior.
@@ -52,17 +57,17 @@ This is a **basic listing component** used in the **Fees and Commissions** modul
 
 ## 4. Functions Explained
 
+### **`handleEditContent`**
 ```typescript
  const handleEditContent = (isEdit = 0) => {
     setIsEdit(isEdit)
     setOpenModal(true)
   }
 ``` 
-
-### **`handleEditContent`**
 **Purpose:** Opens the modal and sets the ID for editing.  
 **Usage:** Called when user clicks edit.
 
+### **`fetchAllServiceFeeData`**
 ```typescript
   const fetchAllServiceFeeData = useCallback(
     async (sort_type: SortType = sortType, sort_column = sortColumn) => {
@@ -93,20 +98,19 @@ This is a **basic listing component** used in the **Fees and Commissions** modul
   )
 ``` 
 
-### **`fetchAllServiceFeeData`**
 **Purpose:** Fetches service fee data from the API with sorting and pagination parameters.  
 **Handles:** Error feedback via toast, sets data and loading state.
 
+### **`useEffect`**
 ```typescript
   useEffect(() => {
     fetchAllServiceFeeData()
   }, [paginationModel, selectedSiteId])
 ```
-
-### **`useEffect`**
 **Purpose:** Triggers data fetch on pagination or site change.  
 **Dependency Array:** `paginationModel`, `selectedSiteId`.
 
+### **`handleDelete`**
 ```typescript
   const handleDelete = async (planId: number | undefined, entityName = '') => {
     try {
@@ -129,8 +133,6 @@ This is a **basic listing component** used in the **Fees and Commissions** modul
     fetchAllServiceFeeData()
   }
 ```
-
-### **`handleDelete`**
 **Purpose:** Deletes a service fee after user confirmation.  
 **Includes:** 
 - Modal trigger for confirmation
@@ -138,14 +140,14 @@ This is a **basic listing component** used in the **Fees and Commissions** modul
 - Toast for success/failure
 - Refetch data after deletion
 
+### **`handleSortModel`**
 ```typescript
 const handleSortModel = (newModel: GridSortModel) =>
     SortModel(newModel, fetchAllServiceFeeData, sortType, sortColumn, setSortType, setSortColumn)
 ```
-
-### **`handleSortModel`**
 **Purpose:** Manages sorting of columns through a shared sorting utility.
 
+## 5. Columns Configuration
 ```typescript
   const columns = ServiceFeeColumn({
     setLoading: setLoading,
@@ -154,11 +156,11 @@ const handleSortModel = (newModel: GridSortModel) =>
     handleEdit: handleEditContent
   })
 ```
-## 5. Columns Configuration
 Columns are imported from a separate file:  
 **`./columns`**  
 This promotes reusability and keeps the main component clean.
 
+## 6. Component Usage Explained
 ```typescript
    <Box sx={{ mb: '20px', display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' }}>
         <Button variant='contained' onClick={() => setOpenModal(true)}>
@@ -192,9 +194,6 @@ This promotes reusability and keeps the main component clean.
         content={`Are you sure you want to delete "${deleteConfirmationModal.entityName}"?`}
       />
 ```
-
-## 6. Component Usage Explained
-
 ### **`<Box>`**
 **Use Case:** Wraps the "Add New" button with spacing and alignment.
 
