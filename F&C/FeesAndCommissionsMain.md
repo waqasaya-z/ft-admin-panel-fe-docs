@@ -1,10 +1,10 @@
-# Fees and Commissio Context
+# Fees and Commission Main Tabs
 ***Micro-service |  Fg-Admin-Panel-Frontend | Fees and Commission Module*** 
 
 ### Component Name
 **FeesAndCommissionsMain.tsx** — Fees and Commissions main tabs that is directly loaded when we first visit the Fees and commissions module
 
-## 1. Introduction: Purpose of the Context
+## 1. Introduction: Purpose
 The purpose of the FeesAndCommissionsMain component is to render a tab-based interface for managing and displaying the fees and commissions data. This interface includes multiple tabs such as "Service Fee," "Bank Transaction Fee," and others. Each tab loads a corresponding component for handling the data and logic associated with that particular fee type.
 
 The TabContext, along with TabList, TabPanel, and Suspense, facilitates lazy loading of content to improve performance. The component utilizes the Material-UI library for UI components and applies state management to track the active tab. The ErrorBoundary ensures that any errors that occur during rendering are handled gracefully, preventing the entire component from crashing.
