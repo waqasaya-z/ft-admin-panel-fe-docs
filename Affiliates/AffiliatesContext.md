@@ -21,20 +21,21 @@ interface IAffiliateContext {
 }
 ```
 
-- affiliate_id: Holds the selected affiliate's ID.
-- setAffiliateId: A method to update the affiliate_id state.
-- affliateData: Stores the details of the selected affiliate.
-- setAffliateData: A method to update the affliateData object.
-- refetchAffiliates: A function to manually trigger a data refresh for affiliates.
-- setRefetchAffiliates: A setter to update the refetch function dynamically.
+- **affiliate_id:** Holds the selected affiliate's ID.
+- **setAffiliateId:** A method to update the affiliate_id state.
+- **affliateData:** Stores the details of the selected affiliate.
+- **setAffliateData:** A method to update the affliateData object.
+- **refetchAffiliates:** A function to manually trigger a data refresh for affiliates.
+- **setRefetchAffiliates:** A setter to update the refetch function dynamically.
 
 ## 3. Creating the Context
 - The context is created using createContext, initialized with undefined to enforce that it must be consumed within a  properly wrapped provider.
+
 ```typescript
 const AffiliateContext = createContext<IAffiliateContext | undefined>(undefined);
 ```
 
-4. The AffiliateProvider Component
+## 4. The AffiliateProvider Component
 This provider wraps its children and supplies all relevant state and methods related to the affiliate context.
 ```typescript
 export const AffiliateProvider = ({ children }: { children: ReactNode }) => {
@@ -59,10 +60,11 @@ export const AffiliateProvider = ({ children }: { children: ReactNode }) => {
 };
 ```
 
-- children: The nested React components that require access to affiliate-related state.
+- **children:** The nested React components that require access to affiliate-related state.
 
 ## 5. Usage of useContext to Access the Context
 The custom hook useAffiliateContext makes accessing the context convenient and ensures it is used correctly within the provider.
+
 ```typescript
 export const useAffiliateContext = () => {
   const context = useContext(AffiliateContext);
