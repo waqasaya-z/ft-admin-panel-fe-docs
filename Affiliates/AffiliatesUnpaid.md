@@ -1,4 +1,4 @@
-# Affiliates Unpaid (Umpaid per affiliate)
+# Affiliates Unpaid (Unpaid per affiliate)
 ***Micro-service | Fg-Admin-Panel-Frontend | Affiliates Module***
 
 ## Component Name
