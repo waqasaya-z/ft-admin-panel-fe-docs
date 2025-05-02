@@ -171,10 +171,10 @@ Determines if the form is in "Add" or "Edit" mode based on the presence of `affi
 - **Form Validation with Yup:**
 Uses `react-hook-form` with `yupResolver` to enforce a validation schema on form inputs.
 
-- Dynamic Commission Type Handling:
-  Supports both:
-  - Fixed commission percentage
-  - Commission based on booking ranges -- rendered conditionally based on the user's selection.
+- **Dynamic Commission Type Handling:**
+    Supports both:
+    - Fixed commission percentage
+    - Commission based on booking ranges -- rendered conditionally based on the user's selection.
 
 - **Data Pre-fill for Edit Mode:**
 Automatically pre-fills form fields using affliateData when in edit mode.
