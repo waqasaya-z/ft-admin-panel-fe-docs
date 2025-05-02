@@ -8,6 +8,8 @@
 This component renders the form used to add new affiliates or edit existing ones. It determines its mode (add vs. edit) based on the presence of `affiliate_id` from context. The form handles input fields for username, password, affiliate start date, commission type (fixed percentage vs. booking-range based), and dynamic booking range tables. Validation is enforced via a Yup schema and React Hook Form.
 
 ## Breakdown of the Component
+Below, each major section of the component is explained in detail.
+
 
 ## Chunk 1: Import Statements
 
