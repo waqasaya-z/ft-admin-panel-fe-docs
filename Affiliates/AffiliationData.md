@@ -10,6 +10,7 @@ This component renders the form used to add new affiliates or edit existing ones
 ## Breakdown of the Component
 
 ## Chunk 1: Import Statements
+
 ```typescript
 import { Grid } from '@mui/material'
 import React, { useEffect, useState } from 'react'
@@ -167,33 +168,24 @@ The component returns JSX that renders a fully controlled form. It includes load
 ## Key Features
 - **Dual Mode (Add/Edit):**
 Determines if the form is in "Add" or "Edit" mode based on the presence of `affiliate_id`.
-
 - **Form Validation with Yup:**
 Uses `react-hook-form` with `yupResolver` to enforce a validation schema on form inputs.
-
 - **Dynamic Commission Type Handling:**
     Supports both:
     - Fixed commission percentage
     - Commission based on booking ranges -- rendered conditionally based on the user's selection.
-
 - **Data Pre-fill for Edit Mode:**
 Automatically pre-fills form fields using affliateData when in edit mode.
-
 - **Disabled Inputs for Immutable Fields:**
 Username, password, and acceptance date fields are shown but non-editable to preserve integrity.
-
 - **Centralized API Call for Add/Edit:**
-Uses a single API (upsertGeneralAffliatesData) to handle both creation and update operations.
-
+Uses a single API (upsertGeneralAffliatesData) to handle both creation and update operations
 - **User Feedback via Toast Notifications:**
 Success and error messages are shown using react-hot-toast for better user experience.
-
 - **Context Integration:**
 Leverages useAffiliateContext() to access and update shared affiliate-related state.
-
 - **Navigation Handling:**
 Uses Next.js useRouter to redirect users after saving or cancelling.
-
 - **Reusability & Modularity:** Employs multiple reusable custom components like:
   - TextFieldWithController
   - RadioButtonsWithController
