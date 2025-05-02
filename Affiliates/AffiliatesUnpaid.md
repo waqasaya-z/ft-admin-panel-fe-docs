@@ -203,7 +203,7 @@ Columns are defined in `UnpaidAffiliatesColumns`, including:
 - Contract type, unpaid counts, amounts
 - Expiration dates highlighted if past
 - Links/tooltips for email history and invoice info
-- **tatusDropdown** to update individual clearance status
+- **statusDropdown** to update individual clearance status
 
 ## Chunk 11: JSX Render
 
@@ -242,7 +242,7 @@ This component returns JSX elements: a filters toolbar and a data grid. It does 
 ---
 
 ## Key Features
-- **Clearance Workflow Controls:**Lock & complete clearance with clear UI states.
+- **Clearance Workflow Controls:** Lock & complete clearance with clear UI states.
 - **Dynamic Filters:** Filter by cutoff date, minimum unpaid amount, booking category, excluded affiliates, and expired IDs.
 - **Batch Actions:** Proceed to payment and pay checked affiliates in bulk.
 - **Individual Status Updates:** Status dropdown per affiliate for fine-grained clearance management.
