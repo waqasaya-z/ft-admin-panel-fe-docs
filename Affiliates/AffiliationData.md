@@ -2,7 +2,7 @@
 ***Micro-service | Fg-Admin-Panel-Frontend | Affiliates Module***
 
 ## Component Name
-**AffiliationData.tsx** — — A form component for creating or updating affiliate profiles within the Affiliate Module of the ferry ticket booking system’s admin panel.
+**AffiliationData.tsx** — A form component for creating or updating affiliate profiles within the Affiliate Module of the ferry ticket booking system’s admin panel.
 
 ## Overall Description
 This component renders the form used to add new affiliates or edit existing ones. It determines its mode (add vs. edit) based on the presence of `affiliate_id` from context. The form handles input fields for username, password, affiliate start date, commission type (fixed percentage vs. booking-range based), and dynamic booking range tables. Validation is enforced via a Yup schema and React Hook Form.
@@ -121,7 +121,7 @@ const onSubmit = async (data) => {
 - **Edit vs. Create:** Deletes id when creating a new affiliate.
 - **Service Call & Notifications:** Calls API, shows toast messages, updates context, and refetches the affiliate list.
 
-# Chunk 5: Form Rendering
+## Chunk 5: Form Rendering
 
 ```typescript
 <form onSubmit={handleSubmit(onSubmit)}>
@@ -165,10 +165,10 @@ The component returns JSX that renders a fully controlled form. It includes load
 ---
 
 ## Key Features
-- Dual Mode (Add/Edit):
+- **Dual Mode (Add/Edit):**
 Determines if the form is in "Add" or "Edit" mode based on the presence of `affiliate_id`.
 
-- Form Validation with Yup:
+- **Form Validation with Yup:**
 Uses `react-hook-form` with `yupResolver` to enforce a validation schema on form inputs.
 
 - Dynamic Commission Type Handling:
@@ -176,27 +176,26 @@ Uses `react-hook-form` with `yupResolver` to enforce a validation schema on form
   - Fixed commission percentage
   - Commission based on booking ranges -- rendered conditionally based on the user's selection.
 
-- Data Pre-fill for Edit Mode:
+- **Data Pre-fill for Edit Mode:**
 Automatically pre-fills form fields using affliateData when in edit mode.
 
-- Disabled Inputs for Immutable Fields:
+- **Disabled Inputs for Immutable Fields:**
 Username, password, and acceptance date fields are shown but non-editable to preserve integrity.
 
-- Centralized API Call for Add/Edit:
+- **Centralized API Call for Add/Edit:**
 Uses a single API (upsertGeneralAffliatesData) to handle both creation and update operations.
 
-- User Feedback via Toast Notifications:
+- **User Feedback via Toast Notifications:**
 Success and error messages are shown using react-hot-toast for better user experience.
 
-- Context Integration:
+- **Context Integration:**
 Leverages useAffiliateContext() to access and update shared affiliate-related state.
 
-- Navigation Handling:
+- **Navigation Handling:**
 Uses Next.js useRouter to redirect users after saving or cancelling.
 
-- Reusability & Modularity:
-Employs multiple reusable custom components like:
- - TextFieldWithController
- - RadioButtonsWithController
- - BookingRangeTable
- - SaveAndCancelButton
+- **Reusability & Modularity:** Employs multiple reusable custom components like:
+  - TextFieldWithController
+  - RadioButtonsWithController
+  - BookingRangeTable
+  - SaveAndCancelButton
