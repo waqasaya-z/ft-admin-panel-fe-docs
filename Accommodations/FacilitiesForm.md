@@ -1,8 +1,6 @@
 # Facilities Form
 ***Micro-service | Fg-Admin-Panel-Frontend | Accommodations Module***
 
-# Component: FacilitiesForm
-
 ## 1. Component Name
 
 **FacilitiesForm.tsx** — A dynamic form component for updating either facilities or permitted passenger types for a specific accommodation on a vessel in the admin panel.
