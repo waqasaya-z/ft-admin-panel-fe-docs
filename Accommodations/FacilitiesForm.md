@@ -212,3 +212,14 @@ This component does not return a value explicitly. However, it:
 - **Any Other Error:** Catches unexpected errors and displays a toast with the error message (if available).
 - **Submission Disabled:** During submission, the form prevents double submissions by disabling the button and showing a loading spinner.
 
+---
+
+## Key Features
+
+- Dynamically handles both "Facilities" and "Passenger Types Permitted" based on the `type` prop.
+- Pre-selects checkboxes based on current accommodation data.
+- Uses `react-hook-form` for minimal and efficient form state management.
+- Optimistically updates the form using `useMemo` and `useEffect`.
+- Submits data via `patchAccommodationsWithoutId` API service.
+- Displays submission loading state using MUI `CircularProgress`.
+- Uses toast notifications for success and error feedback.
