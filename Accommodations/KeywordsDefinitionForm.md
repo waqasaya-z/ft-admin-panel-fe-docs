@@ -2,7 +2,7 @@
 ***Micro-service | Fg-Admin-Panel-Frontend | Accommodations Module***
 
 ## 1. Component Name
-**KeywordsDefinitionForm** — This component allows an admin to define and manage keyword logic rules (AND/OR conditions) for accommodation grouping under the settings section.
+**KeywordsDefinitionForm.tsx** — This component allows an admin to define and manage keyword logic rules (AND/OR conditions) for accommodation grouping under the settings section.
 
 ## 2. Overall Description
 This component renders a dynamic form that enables the admin to set logical keyword combinations used to classify or group accommodations. It supports adding up to five keyword-condition pairs and saves them to the backend using `upsertAccommodationData`. The keywords are fetched from a central data table via the `useEssentialData` hook.
@@ -71,6 +71,7 @@ useEffect(() => {
 ```
 
 **Explanation:**
+
 On mount or when data changes:
 - Initializes form fields and dropdown indices based on existing data.
 - Sets default values in the form for each keyword condition.
