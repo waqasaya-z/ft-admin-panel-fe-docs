@@ -5,7 +5,7 @@
 
 ## 1. Component Name
 
-**FacilitiesForm** — A dynamic form component for updating either facilities or permitted passenger types for a specific accommodation on a vessel in the admin panel.
+**FacilitiesForm.tsx** — A dynamic form component for updating either facilities or permitted passenger types for a specific accommodation on a vessel in the admin panel.
 
 ---
 
