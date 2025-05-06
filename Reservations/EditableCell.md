@@ -52,9 +52,12 @@ useEffect(() => {
 ```
 
 **Explanation:**
-- Uses a ref on the cell wrapper to detect clicks outside.
-- When in edit mode, attaches a document-level listener that cancels edits if the click happened outside the cell or any popover components.
-- Cleans up the listener when unmounting or exiting edit mode.
+- `isInEditMode` checks the current `cellModesModel` for the specific cell (by `id` and `field`) to see if its mode is `"edit"`.
+- The mode is **externally set** via a call to `handleEditClick(id, field)`, which should update `cellModesModel` to enter edit mode — this is what triggers the component to render input controls.
+- A `ref` (`cellRef`) is attached to the cell’s container to detect clicks inside vs. outside.
+- When in edit mode, a document-wide mousedown listener is added.
+- If the user clicks outside the current cell (and its popovers), it triggers the handleCancelClick() function, which exits edit mode and rolls back unsaved changes.
+- The listener is removed when the component unmounts or exits edit mode.
 
 ### Chunk 3: Determining Input Type & Display Value
 
