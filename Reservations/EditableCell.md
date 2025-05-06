@@ -78,7 +78,7 @@ if (isDropdown && dropdownValues[field]) {
 - Checks arrays of field names to choose the correct input component.
 - For dropdowns, looks up the full option object to render labels.
 
-## Chunk 4: Render Edit Mode vs. Read Mode
+### Chunk 4: Render Edit Mode vs. Read Mode
 
 ```tsx
 return isInEditMode ? (
